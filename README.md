@@ -1,7 +1,6 @@
-# Recursion: N Queens Lab
-
+# Recursion: 
 ## Numbrix Lab
-
+**Created by**
 **Robert Glen Martin**  
 School for the Talented and Gifted  
 
