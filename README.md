@@ -49,9 +49,9 @@ The solution to the puzzle is:
 
 ### Why Recursive Depth-First Search?
 The most straightforward way to attack this problem is to try all the possible positions for the remaining numbers and see which ones solve the puzzle.  This can be accomplished with a recursive depth-first search.
-However, in this puzzle, there are 81 - 16 = 65 numbers to place.  Therefore, there are 65! (65 factorial) possible placements for the remaining 65 numbers, only one of which is correct.  65! is a pretty large number.  It’s even greater than 1090, a one followed by 90 zeros.
-How long would it take to try 1090 different possible solutions?  Let’s assume that we have a smoking fast program running on a really fast computer that can compute a quadrillion (1,000,000,000,000,000 = 1015) possible number placements every second.  Then it would take more than 1090 / 1015 = 1075 seconds for our program to complete.  But how long is 1075 seconds?
-1075/ 60 / 60 / 24 / 365 is more than 1067 years.  Since the AP Exam is in May, we need a faster algorithm.
+However, in this puzzle, there are 81 - 16 = 65 numbers to place.  Therefore, there are 65! (65 factorial) possible placements for the remaining 65 numbers, only one of which is correct.  65! is a pretty large number.  It’s even greater than 10^90, a one followed by 90 zeros.
+How long would it take to try 10^90 different possible solutions?  Let’s assume that we have a smoking fast program running on a really fast computer that can compute a quadrillion (1,000,000,000,000,000 = 10^15) possible number placements every second.  Then it would take more than 10^90 / 10^15 = 10^75 seconds for our program to complete.  But how long is 10^75 seconds?
+10^75/ 60 / 60 / 24 / 365 is more than 1067 years.  Since the AP Exam is in May, we need a faster algorithm.
 
 The code you are going to write solves a Numbrix using a recursive depth-first search with pruning.  “Pruning” means that your code will check each number before it is placed into the puzzle and if the number doesn’t “fit”, it will not explore that branch of the search any further.  Using this strategy, a puzzle can be solved in seconds!
 Our search for a solution begins with the solve method which iterates through each element (row r and column c) of grid and attempts to solve the puzzle by starting with a 1 in that location.  It does this by calling recursiveSolve(r, c, 1) to attempt a solution beginning with a 1 at row r and column c.
